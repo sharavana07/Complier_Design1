@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <conio.h>
 
-int stack[100], top = -1, n;
+int stack[100], top = -1, n, i;
 
 // Push operation
 void push() {
@@ -31,15 +32,17 @@ void display() {
         printf("Stack is empty\n");
     } else {
         printf("Stack elements:\n");
-        for (int i = 0; i <= top; i++) {
+        for (i = 0; i <= top; i++) {
             printf("%d ", stack[i]);
         }
         printf("\n");
     }
 }
 
-int main() {
+void main() {
     int choice;
+
+    clrscr();  // Clear screen (Turbo C++)
 
     printf("Enter stack size: ");
     scanf("%d", &n);
@@ -59,5 +62,5 @@ int main() {
 
     } while (choice != 4);
 
-    return 0;
+    getch(); // Wait for key press
 }
